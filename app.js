@@ -7,8 +7,12 @@ const app = express();
 
 app.use(express.json());
 app.use(morgan());
-app.use(cors())
-
+ 
+app.use(cors({
+    origin: 'https://www.seefitness.coach', // Replace with your actual frontend domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-API-Key', 'accept'],
+}));
 app.get("/", async (req, res) => {
     res.json({
         message: "Hello, world and This is updated code"
