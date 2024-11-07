@@ -82,6 +82,6 @@ app.post('/api/proxy/contacts/assign-tag', async (req, res) => {
         return res.status(error.response?.status || 500).json({ message: "Error assigning tag", error: error.message });
     }
 });
-app.listen(3001, () => {
+app.listen(443, () => {
     console.log('wow')
 })
